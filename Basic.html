@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>prototype variable</title>
+</head>
+<body>
+<p class="button">button</p>
+</body>
+
+<script>
+  let pro = function() {
+    let CheckObject = function () {};
+    CheckObject.prototype = {
+      checkName: function () {
+        console.log('check name');
+        return this;
+      },
+      checkEmail: function () {
+        console.log('checkEmail');
+        return this;
+      }
+    }
+    let a = new CheckObject();
+    a.checkName().checkEmail();
+  }
+  let pbutton = document.querySelector('p.button')
+  pbutton.onclick = function () {
+    pro();
+  }
+
+</script>
+</html>
